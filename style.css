@@ -1,0 +1,450 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F9FAFB;
+    color: #111827;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Header e Navegação */
+.header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 24px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.nav-link {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #6B7280;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 150ms ease-out;
+}
+
+.nav-link:hover {
+    background-color: #F3F4F6;
+    color: #374151;
+}
+
+.nav-link.active {
+    background-color: #3B82F6;
+    color: white;
+}
+
+/* Layout Principal */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+@media (min-width: 992px) {
+    .main-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+/* Seção da Calculadora */
+.calculator-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(17, 24, 44, 0.08);
+    padding: 32px;
+    max-width: 420px;
+    width: 100%;
+}
+
+/* Display */
+.display {
+    background-color: #F9FAFB;
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.display-expression {
+    font-size: 20px;
+    color: #9CA3AF;
+    font-weight: 400;
+    min-height: 24px;
+}
+
+.display-result {
+    font-size: 64px;
+    font-weight: 300;
+    color: #111827;
+    line-height: 1.2;
+    word-break: break-all;
+}
+
+/* Grid de Botões */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Estilos dos Botões */
+.btn {
+    height: 72px;
+    border: none;
+    border-radius: 12px;
+    font-size: 32px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 150ms ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.96);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Botões Numéricos */
+.btn-number {
+    background-color: #E5E7EB;
+    color: #111827;
+}
+
+.btn-number:hover {
+    background-color: #D1D5DB;
+}
+
+.btn-zero {
+    grid-column: span 2;
+    width: 100%;
+}
+
+/* Botões de Operador */
+.btn-operator {
+    background-color: #E5E7EB;
+    color: #3B82F6;
+}
+
+.btn-operator:hover {
+    background-color: #DBEAFE;
+}
+
+/* Botão de Igual */
+.btn-equals {
+    background-color: #3B82F6;
+    color: white;
+}
+
+.btn-equals:hover {
+    background-color: #2563EB;
+}
+
+/* Botão Clear */
+.btn-clear {
+    background-color: #E5E7EB;
+    color: #EF4444;
+}
+
+.btn-clear:hover {
+    background-color: #FEE2E2;
+}
+
+/* Seção do Histórico */
+.history-section {
+    flex: 1;
+    max-width: 400px;
+}
+
+.history-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(17, 24, 44, 0.08);
+    padding: 24px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.history-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.btn-clear-history {
+    background: none;
+    border: 1px solid #E5E7EB;
+    color: #6B7280;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 150ms ease-out;
+}
+
+.btn-clear-history:hover {
+    background-color: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+.history-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.history-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #E5E7EB;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.history-item:hover {
+    background-color: rgba(229, 231, 235, 0.5);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-expression {
+    font-size: 20px;
+    color: #9CA3AF;
+    margin-bottom: 4px;
+}
+
+.history-result {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.history-empty {
+    text-align: center;
+    color: #9CA3AF;
+    font-style: italic;
+    padding: 48px 0;
+}
+
+/* Estilos da Página da Tabuada */
+.tabuada-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tabuada-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(17, 24, 44, 0.08);
+    padding: 48px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.tabuada-selector {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.tabuada-label {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.tabuada-input {
+    width: 100%;
+    max-width: 300px;
+    height: 48px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    text-align: center;
+    transition: border-color 150ms ease-out;
+}
+
+.tabuada-input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.tabuada-results {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.tabuada-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3B82F6;
+    margin-bottom: 32px;
+}
+
+.tabuada-list {
+    display: grid;
+    gap: 12px;
+}
+
+.tabuada-item {
+    padding: 16px;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #374151;
+    border-left: 4px solid #3B82F6;
+}
+
+/* Seletor Rápido */
+.quick-selector {
+    text-align: center;
+}
+
+.quick-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.number-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.number-btn {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #E5E7EB;
+    background-color: white;
+    color: #374151;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 150ms ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number-btn:hover {
+    background-color: #F3F4F6;
+    border-color: #D1D5DB;
+}
+
+.number-btn.active {
+    background-color: #3B82F6;
+    color: white;
+    border-color: #3B82F6;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 767px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .title {
+        font-size: 36px;
+    }
+    
+    .calculator {
+        padding: 24px;
+    }
+    
+    .display {
+        padding: 24px 16px;
+        margin-bottom: 24px;
+    }
+    
+    .display-result {
+        font-size: 56px;
+    }
+    
+    .btn {
+        height: 64px;
+        font-size: 28px;
+    }
+    
+    .tabuada-container {
+        padding: 24px;
+    }
+    
+    .history-container {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .display-result {
+        font-size: 48px;
+    }
+    
+    .btn {
+        height: 56px;
+        font-size: 24px;
+    }
+    
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .nav-link {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Simples</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Calculadora</h1>
+        <nav class="nav">
+          <a href="index.html" class="nav-link active">Calculadora</a>
+          <a href="tabuada.html" class="nav-link">Tabuada</a>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="calculator-section">
+          <div class="calculator">
+            <!-- Display da Calculadora -->
+            <div class="display">
+              <div class="display-expression" id="expression">0</div>
+              <div class="display-result" id="result">0</div>
+            </div>
+
+            <!-- Botões da Calculadora -->
+            <div class="buttons-grid">
+              <!-- Primeira linha -->
+              <button class="btn btn-clear" data-action="clear">C</button>
+              <button class="btn btn-operator" data-action="sqrt">√</button>
+              <button class="btn btn-operator" data-action="percent">%</button>
+              <button class="btn btn-operator" data-value="÷">÷</button>
+
+              <!-- Segunda linha -->
+              <button class="btn btn-number" data-value="7">7</button>
+              <button class="btn btn-number" data-value="8">8</button>
+              <button class="btn btn-number" data-value="9">9</button>
+              <button class="btn btn-operator" data-value="×">×</button>
+
+              <!-- Terceira linha -->
+              <button class="btn btn-number" data-value="4">4</button>
+              <button class="btn btn-number" data-value="5">5</button>
+              <button class="btn btn-number" data-value="6">6</button>
+              <button class="btn btn-operator" data-value="-">-</button>
+
+              <!-- Quarta linha -->
+              <button class="btn btn-number" data-value="1">1</button>
+              <button class="btn btn-number" data-value="2">2</button>
+              <button class="btn btn-number" data-value="3">3</button>
+              <button class="btn btn-operator" data-value="+">+</button>
+
+              <!-- Quinta linha -->
+              <button class="btn btn-number btn-zero" data-value="0">0</button>
+              <button class="btn btn-number" data-value=",">,</button>
+              <button class="btn btn-equals" data-action="equals">=</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção do Histórico -->
+        <aside class="history-section">
+          <div class="history-container">
+            <div class="history-header">
+              <h2 class="history-title">Histórico</h2>
+              <button class="btn-clear-history" id="clearHistory">
+                Limpar
+              </button>
+            </div>
+            <div class="history-list" id="historyList">
+              <div class="history-empty">Nenhum cálculo ainda</div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
