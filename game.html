@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleatório - O Jogo do Número Secreto</title>
+    <link rel="stylesheet" href="assets/game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Número Secreto</h1>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Calculadora</a>
+                <a href="../tabuada.html" class="nav-link">Tabuada</a>
+                <a href="index.html" class="nav-link active">Número Secreto</a>
+            </nav>
+        </header>
+        <!-- Header do Jogo -->
+        <header class="game-header">
+            <p class="game-subtitle">O Programa Travesso - Dimensão Digital</p>
+            <div class="game-story">
+                <p>✨ Você acabou de entrar na <strong>Dimensão Digital</strong>...</p>
+                <p>👾 Um programa travesso chamado <strong>Aleatório</strong> escondeu números secretos pela cidade virtual!</p>
+                <p>🎯 Sua missão: descobrir qual número ele escolheu!</p>
+            </div>
+        </header>
+
+        <!-- Status do Jogo -->
+        <section class="game-status">
+            <div class="attempt-counter">
+                <span class="attempt-label">Tentativa:</span>
+                <span class="attempt-number" id="currentAttempt">1</span>
+                <span class="attempt-separator">/</span>
+                <span class="attempt-total" id="maxAttempts">10</span>
+            </div>
+            
+            <div class="secret-info">
+                <span class="secret-label">Número está entre:</span>
+                <span class="secret-range" id="numberRange">1 e 100</span>
+            </div>
+        </section>
+
+        <!-- Interface do Jogo -->
+        <section class="game-interface">
+            <div class="input-section">
+                <label for="guessInput" class="input-label">
+                    Digite seu palpite:
+                </label>
+                <div class="input-container">
+                    <input 
+                        type="number" 
+                        id="guessInput" 
+                        class="guess-input" 
+                        min="1" 
+                        max="100" 
+                        placeholder="?"
+                    >
+                    <button id="guessButton" class="guess-button">
+                        🔍 Adivinhar!
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feedback do Aleatório -->
+            <div class="aleatorio-response" id="aleatorioResponse">
+                <div class="aleatorio-avatar">🤖</div>
+                <div class="aleatorio-message" id="aleatorioMessage">
+                    Oi! Eu sou o Aleatório! Escolhi um número de 1 a 100. Consegue adivinhar qual é?
+                </div>
+            </div>
+
+            <!-- Histórico de Palpites -->
+            <div class="guess-history" id="guessHistory">
+                <h3 class="history-title">🗂️ Histórico de Palpites</h3>
+                <div class="history-list" id="historyList">
+                    <div class="history-empty">
+                        Nenhum palpite ainda... Vamos começar!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controles do Jogo -->
+        <section class="game-controls">
+            <button id="newGameButton" class="control-button primary">
+                🎮 Novo Jogo
+            </button>
+            <button id="hintButton" class="control-button secondary">
+                💡 Dica
+            </button>
+        </section>
+
+        <!-- Modal de Resultado -->
+        <div class="game-modal" id="gameModal">
+            <div class="modal-content">
+                <div class="modal-header" id="modalHeader">
+                    <div class="modal-icon">🎉</div>
+                    <h2 class="modal-title" id="modalTitle">Parabéns!</h2>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-message" id="modalMessage">
+                        Você conseguiu! O número secreto era <span id="secretNumber"></span>
+                    </p>
+                    <div class="modal-stats" id="modalStats">
+                        <p>Tentativas usadas: <span id="attemptsUsed"></span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-button" onclick="closeModal()">
+                        Continuar Jogando
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/game.js"></script>
+</body>
+</html>
